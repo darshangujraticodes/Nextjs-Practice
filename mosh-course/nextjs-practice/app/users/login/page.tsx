@@ -6,7 +6,7 @@ const NewUserLogin = () => {
     <>
       <div>
         <h2 className=" capitalize font-medium text-3xl text-center mt-5">
-          New User Login Authentication Inner Page
+          New User Login Authentication Page
         </h2>
 
         <div className="navBtnWrap  flex justify-center  mt-5 items-center ">

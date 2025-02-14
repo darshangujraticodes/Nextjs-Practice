@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import AddToCart from "../app/components/AddToCart";
+import ProductCardInfo from "./components/ProductCardInfo";
 
 export default function Home() {
   return (
@@ -12,15 +14,19 @@ export default function Home() {
             href="/users"
             className=" bg-stone-800 text-white p-3 rounded-lg mx-3 font-semibold text-xl "
           >
-            User Info
+            Profile
           </Link>
           <Link
             href="/users/login"
             className=" bg-stone-800 text-white p-3 rounded-lg mx-3 font-semibold text-xl "
           >
             {" "}
-            User Login{" "}
+            Login{" "}
           </Link>
+        </div>
+
+        <div className="flex justify-center ">
+          <ProductCardInfo />
         </div>
       </section>
     </main>
