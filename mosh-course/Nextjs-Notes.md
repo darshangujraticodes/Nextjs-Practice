@@ -101,3 +101,12 @@ Frontent code get normally executed in browser
      - Server Side Rendering (SSR)
        - Static ( O ) -> { cache: { revalidated : 10 } } -> (Rendered only during build time) it define the static page component content will be static and will not change over time so it will rendered on during build time
        - Dynamic ( λ ) -> { cache: {"no-store"} } -> (Rendered as per request time) It define component has dynamic data
+
+### Styling NextJs Application
+
+Style can be applied through 3 types
+
+1. Global Styles : It will apply css style to all component, here we should specific component style it will make it lengthy and un-maintainable
+2. CSS Modules : It has scope to component / page only
+3. Tailwinf CSS
+4. Daisy UI

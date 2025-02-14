@@ -1,6 +1,7 @@
 import { log } from "node:console";
 import React from "react";
 import AddToCart from "./AddToCart";
+import ProductCard from "./ProductCard";
 
 const ProductCardInfo = () => {
   return (
@@ -30,6 +31,8 @@ const ProductCardInfo = () => {
 
         <AddToCart />
       </div>
+
+      <ProductCard />
     </>
   );
 };
