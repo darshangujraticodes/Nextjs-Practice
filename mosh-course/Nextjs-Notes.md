@@ -38,14 +38,19 @@ Frontent code get normally executed in browser
 Key Files
 
 1. app / src -> folder :
-   a. components
-   b. pages
-   c. styles
-   d. lib
-   e. hooks
-   f. context
-   g. utils
+
+   1. components
+   2. pages
+   3. styles
+   4. lib
+   5. hooks
+   6. context
+   7. utils
 
 2. public folder contains all the assets and images using in buildin web app
+
+- Next Js app routing
+  - In new file based routing inside folder it should only have name : page it will help next js render to identify as inner page and will align it with inner a page. Naming other than page will not identify as inner page.
+  - Link tag is used for page traversing instead of anchor tag becos just like it re render complete which we want to not apply in next js
 
 ### nextjs app routing
