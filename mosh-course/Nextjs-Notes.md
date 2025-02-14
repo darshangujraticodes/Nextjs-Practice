@@ -79,6 +79,25 @@ Frontent code get normally executed in browser
 
    - Remember as good practice never apply use client on random direct conversion from ssr to csr always create separate component of CSR mark it as use client on top and embed in ssr pages
 
-### NextJS API Data Fetching
+5. Fetching API data :
 
-Note : For Security and for easy fetch alway fetch api data in SSR it is more reliable
+- AS good practice it need to be done in SSR it prevent security breach,
+- Best Internal Optimization to reduce api data fetching latency.
+
+4. Caching
+
+- It is to store data at any place where it is easy and faster to access. File is stored at 3 places (local memory, file system, network server)
+- Caching option is built in next js fetch operation it consist of 2 types
+  - `{ cache : {"no-store"}  } ` -> it does not store api data, If you don't want any caching (always fetch fresh data) use this, it is used in real time update web app eg stock price web app or sports live score display web app
+  - `{ next : { revalidate:10 } } ` -> it cache the data for 10 sec. | If a user requests this page within 10 seconds, the cached data is used.
+-
+
+6. Next Js Another Performance optimization technique called static rendering methods
+
+   - Static Rendering : In this if we have pages or component who has static data will compile only during build time
+   - Types of Rendering in NextJS
+
+     - Client Side Rendering (CSR)
+     - Server Side Rendering (SSR)
+       - Static ( O ) -> { cache: { revalidated : 10 } } -> (Rendered only during build time) it define the static page component content will be static and will not change over time so it will rendered on during build time
+       - Dynamic ( λ ) -> { cache: {"no-store"} } -> (Rendered as per request time) It define component has dynamic data
