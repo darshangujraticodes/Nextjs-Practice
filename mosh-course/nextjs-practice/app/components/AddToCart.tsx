@@ -15,7 +15,7 @@ function AddToCart() {
         </button>
       </div>
 
-      <div>
+      <div className="flex  justify-center ">
         <button className={styles.primaryBtn}>Module CSS Button</button>
       </div>
     </>

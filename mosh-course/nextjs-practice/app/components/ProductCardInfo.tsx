@@ -32,7 +32,7 @@ const ProductCardInfo = () => {
         <AddToCart />
       </div>
 
-      <ProductCard />
+      {/* <ProductCard /> */}
     </>
   );
 };

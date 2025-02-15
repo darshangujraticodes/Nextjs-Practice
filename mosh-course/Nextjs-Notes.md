@@ -110,3 +110,28 @@ Style can be applied through 3 types
 2. CSS Modules : It has scope to component / page only
 3. Tailwinf CSS
 4. Daisy UI
+
+### Special Files in Next Js
+
+1. `page.tsx` -> it define the inner page with display content.
+2. `loading.tsx` -> it content the shimmer effect ui loading effect to display api data is loading
+3. `layout.tsx` -> it define the structure of component to be showed in page
+4. `route.tsx` -> it is used to create api
+5. `not-found.tsx` -> to display custom errors
+6. `error.tsx` -> to display general errors
+
+### Routing in NextJs
+
+1. Dynamic Routing :
+
+   - create new folder `[id]` to fetch data id in it but inside it create only `page.tsx` file , component file not able to fetch unique id pass through url
+
+2. Nested Routing :
+
+   - It will be applied as same in dynamic routing format
+
+3. Segments Routing | Catch All Segements
+
+   - When we want to fetch multiple data from url routes it sis applied through segment slug folder
+   - folder name : `[[...slug]]` -> to fetch mulitiple data are props parmeter in page data routing | this params routing called segments data fetching
+   - Note alway put double square bracket becoz in single bracket null slug value lead to `404 not found product page` | `[[...slug]]`

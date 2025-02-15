@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../app/components/AddToCart";
 import ProductCardInfo from "./components/ProductCardInfo";
+import ProductCard from "./components/ProductCard";
 
 export default function Home() {
   return (
@@ -25,8 +26,12 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="flex justify-center ">
+        <div className=" flex justify-center mt-5">
           <ProductCardInfo />
+        </div>
+
+        <div className=" flex justify-center mt-5">
+          <ProductCard />
         </div>
       </section>
     </main>

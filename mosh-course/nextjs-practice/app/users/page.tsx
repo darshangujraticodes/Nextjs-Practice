@@ -49,7 +49,7 @@ eg cricbuzz site display every time new updated score
 
         <div className="p-5">
           <div>
-            <table>
+            <table className="table table-bordered">
               <thead>
                 <tr>
                   <th>Id</th>
