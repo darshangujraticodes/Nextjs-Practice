@@ -1,13 +1,20 @@
 import Link from "next/link";
 import React from "react";
+import UserTable from "./UserTable";
 
-interface User {
-  id: number;
-  name: string;
-  email: string;
+interface Props {
+  params: {
+    slug: string[];
+  };
+  searchParams: {
+    sortOrder: string;
+  };
 }
 
-const UsersPage = async () => {
+const UsersPage = ({
+  params: { slug },
+  searchParams: { sortOrder },
+}: Props) => {
   const user = "Harry Potter";
 
   // API Data is always fetch in SSR section
@@ -25,12 +32,6 @@ eg cricbuzz site display every time new updated score
 
   */
 
-  const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-    next: { revalidate: 10 },
-  });
-  const result: User[] = await response.json();
-  // User[] it define user data of array
-
   return (
     <>
       <div>
@@ -47,27 +48,15 @@ eg cricbuzz site display every time new updated score
           </Link>
         </div>
 
+        <div className="mt-5">
+          <p className="text-2xl text-center">
+            Dynamic Routing (Query String Parameters) : /users?sortOrder=
+            {sortOrder}
+          </p>
+        </div>
+
         <div className="p-5">
-          <div>
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                {result?.map((user) => (
-                  <tr className="" key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <UserTable sortOrder={sortOrder} />
         </div>
       </div>
     </>

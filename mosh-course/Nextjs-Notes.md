@@ -135,3 +135,12 @@ Style can be applied through 3 types
    - When we want to fetch multiple data from url routes it sis applied through segment slug folder
    - folder name : `[[...slug]]` -> to fetch mulitiple data are props parmeter in page data routing | this params routing called segments data fetching
    - Note alway put double square bracket becoz in single bracket null slug value lead to `404 not found product page` | `[[...slug]]`
+
+4. Query String search Params :
+
+   - Query String parameter are the values which is fetch after `?` symbol and search parmeter
+   - eg URL = /products?sortOrder="name" -> Extra information after Question mark to perform operation
+
+5. Programmatic Navigation
+   - When we want to redirect to new url on form submit or button click have to use programmatic navigation in this we redirect to defined destination path
+   - we `import {useRouter}  from 'next/router'` and use them in call back `router.push('/users')`.
