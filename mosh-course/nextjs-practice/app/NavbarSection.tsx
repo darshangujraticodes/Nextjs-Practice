@@ -35,6 +35,20 @@ const NavbarSection = () => {
         >
           Login
         </Link>
+
+        <Link
+          href="/api/users"
+          className="text-2xl text-white p-3 rounded-lg  mx-3 "
+        >
+          Users Api Data
+        </Link>
+
+        <Link
+          href="/api/todos"
+          className="text-2xl text-white p-3 rounded-lg  mx-3 "
+        >
+          Todos API Data
+        </Link>
       </div>
     </nav>
   );
