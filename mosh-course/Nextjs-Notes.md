@@ -142,5 +142,21 @@ Style can be applied through 3 types
    - eg URL = /products?sortOrder="name" -> Extra information after Question mark to perform operation
 
 5. Programmatic Navigation
+
    - When we want to redirect to new url on form submit or button click have to use programmatic navigation in this we redirect to defined destination path
    - we `import {useRouter}  from 'next/router'` and use them in call back `router.push('/users')`.
+
+6. Custom Not Found Page (`not-found.tsx`)
+
+   - It is used to catch the run time error which due to wrong path file name is called or File does not exist.
+   - when we to display not found on logical operation basis
+
+7. Custom Error Page (`error.tsx`)
+
+### Types of File in NextJs
+
+1. `errors.tsx` -> It help to catch unexpected runtime errors or server rendering error.
+2. `not-found.tsx` -> It help to catch the error which occurs due to wrong path name of file or file does not exist
+3. `loading.tsx` -> It help to show rendering or loading effect untill content is loading, it enhance user experience by showing shimmer effect while content is loading
+4. `layout.tsx` -> It help to define the page structure,
+5. `page.tsx` -> It is main coding file where the content and logic to be written and executed, it also help to display the meta data

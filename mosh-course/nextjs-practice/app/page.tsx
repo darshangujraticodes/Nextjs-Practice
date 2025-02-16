@@ -5,6 +5,10 @@ import ProductCardInfo from "./components/ProductCardInfo";
 import ProductCard from "./components/ProductCard";
 
 export default function Home() {
+  // procodrr Course : https://procodrr.com/nextjs/
+
+  // chai code next course : https://youtu.be/OgS1ZWZItno?si=_FKhpvnRKEAqtB6b
+
   return (
     <main>
       <section>

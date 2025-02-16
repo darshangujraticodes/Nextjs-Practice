@@ -34,7 +34,7 @@ interface sortObject {
 }
 
 const UserTable = async ({ sortOrder = "name" }: Props) => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users", {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users2", {
     next: { revalidate: 10 },
   });
   const result: User[] = await response.json();

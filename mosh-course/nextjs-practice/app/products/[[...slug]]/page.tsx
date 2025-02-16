@@ -7,6 +7,16 @@ interface Props {
   searchParams: { sortOrder: string };
 }
 
+export const metadata = {
+  title: "Product Page ",
+  description: "Learn more about Product Page",
+  openGraph: {
+    title: "Product Page - Next Js Practical",
+    description: "Learn more about our Product Page.",
+    type: "website",
+  },
+};
+
 const ProductDetailsPage = ({
   params: { slug },
   searchParams: { sortOrder },
