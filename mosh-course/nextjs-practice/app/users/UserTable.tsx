@@ -12,7 +12,7 @@ interface Props {
   sortOrder: string;
 }
 
-interface sortObject {
+interface userInterface {
   id: number;
   name: string;
   username: string;
@@ -34,7 +34,7 @@ interface sortObject {
 }
 
 const UserTable = async ({ sortOrder = "name" }: Props) => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users2", {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users", {
     next: { revalidate: 10 },
   });
   const result: User[] = await response.json();
@@ -42,8 +42,11 @@ const UserTable = async ({ sortOrder = "name" }: Props) => {
 
   console.log(result);
 
+  // let sortedData: userInterface[] = [];
+
   let sortedData;
   if (sortOrder === "name") {
+    // typescript error
     sortedData = result.sort((a, b) => a.name.localeCompare(b.name));
   }
 

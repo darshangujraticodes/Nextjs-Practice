@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface Props {
@@ -25,7 +26,17 @@ const ProductDetailsPage = ({
 
   return (
     <div>
+      <div className="flex justify-center  mt-5">
+        <Link
+          className=" text-center text-white rounded-lg  bg-slate-800 p-4 "
+          href="/products/grocery/dairy/cheese?sortOrder=price"
+        >
+          Product : Click to get URL Slug Capture Example
+        </Link>
+      </div>
+
       <h1 className="text-2xl mt-5 text-center ">
+        <br />
         Product Details : {slug?.join(", ")} | Sort Product : {sortOrder}
       </h1>
     </div>

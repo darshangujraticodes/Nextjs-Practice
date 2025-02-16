@@ -155,7 +155,7 @@ Style can be applied through 3 types
 
 ### Types of File in NextJs
 
-1. `errors.tsx` -> It help to catch unexpected runtime errors or server rendering error.
+1. `errors.tsx` -> It help to catch unexpected runtime errors or server rendering error. just note it should be `"use client"` means client side rendering.
 2. `not-found.tsx` -> It help to catch the error which occurs due to wrong path name of file or file does not exist
 3. `loading.tsx` -> It help to show rendering or loading effect untill content is loading, it enhance user experience by showing shimmer effect while content is loading
 4. `layout.tsx` -> It help to define the page structure,
