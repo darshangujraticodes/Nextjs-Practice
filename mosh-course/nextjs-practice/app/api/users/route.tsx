@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { apiData } from "./apiData.js";
+import { apiData } from "./apiData";
+import schema from "./schema";
 
 /*
 
@@ -26,8 +27,10 @@ export async function POST(request: NextRequest) {
     Step 3 : else return body value  
   */
 
-  if (!body.name)
-    return NextResponse.json({ error: "Name is Required!" }, { status: 404 });
+  const validation = schema.safeParse(body);
+
+  if (!validation.success)
+    return NextResponse.json(validation.error.message, { status: 404 });
 
   return NextResponse.json({ id: 1, name: body.name }, { status: 201 });
 }
