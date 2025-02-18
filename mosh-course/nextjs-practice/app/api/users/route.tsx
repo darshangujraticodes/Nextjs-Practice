@@ -21,15 +21,16 @@ export async function GET() {
   return NextResponse.json(usersData, { status: 200 });
 }
 
+/*
+  In Actual Post Methods action steps
+    step 1 : fetch the user response and validate it, if it is proper then move to next step 
+    Step 2 : Then check whether our new entry is clashing with pre exisiting unique data value, if yes return value already exist 
+    Step 3 : So uptill now all things is proper so execute insert query of database
+    step 4 : return response data inserted successfully  
+  */
+
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  /*
-
-  In Actual Post Methods 
-    step 1 : we validate the recived body message  
-    Step 2 : if invalid return 400
-    Step 3 : else return body value  
-  */
 
   const validation = schema.safeParse(body);
 

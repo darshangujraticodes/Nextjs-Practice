@@ -3,6 +3,7 @@
 
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// DATABASE_URL="mysql://root:darshan@localhost:3306/nextapp"
 
 generator client {
   provider = "prisma-client-js"

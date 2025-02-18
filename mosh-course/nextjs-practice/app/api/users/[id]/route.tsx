@@ -59,20 +59,17 @@ export async function GET(
   return NextResponse.json(user, { status: 200 });
 }
 
+/*
+    step 1 : fetch the user response and validate it with zod
+    step 2 : if it is proper then check whether data is there or not in database
+    step 3 : if it is not found return 404 not found response 
+    step 4 : if it is found then execute update query and return data updated successfully response
+    */
+
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  /*
-    step 1 : validate the request body value
-    step 2 : If invalid return 400
-    step 3 : fetch the user with given id
-    step 4 : if user does not exist return 404
-    step 5 : update the user
-    step 6 : Return the update user data
-
-    */
-
   const body = await request.json();
 
   const validation = schema.safeParse(body);
@@ -114,17 +111,17 @@ export async function PUT(
   );
 }
 
+/*
+    step 1 : fetch the user response and validate it 
+    step 2 : if it is proper then check wheter data is there or not in database
+    step 3 : if it is not found return 404 not found response 
+    step 3 : if it is found then execute delete query and return data deleted successfully response
+    */
+
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  /*
-    step 1 : Fetch the user form DB
-    step 2 : if not found , return 404
-    step 3 : if found , delete the user
-    step 3 : Return 200
-    */
-
   const body = await request.json();
 
   const validation = schema.safeParse(body);
