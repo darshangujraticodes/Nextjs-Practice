@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "../schema";
+import { prisma } from "@/prisma/client";
 
 interface Props {
   params: { id: number };
@@ -31,9 +32,9 @@ const userData = [
   },
 ];
 
-export function GET(
+export async function GET(
   request: NextRequest,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } }
 ) {
   /*
     while fetching individual data using id 
@@ -44,15 +45,23 @@ export function GET(
 
     */
 
-  if (params.id > 10)
+  // return NextResponse.json(userData);
+
+  const user = await prisma.user.findUnique({
+    where: {
+      id: parseInt(params.id),
+    },
+  });
+
+  if (!user)
     return NextResponse.json({ error: "User Not Found !" }, { status: 404 });
 
-  return NextResponse.json(userData);
+  return NextResponse.json(user, { status: 200 });
 }
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } }
 ) {
   /*
     step 1 : validate the request body value
@@ -69,22 +78,45 @@ export async function PUT(
   const validation = schema.safeParse(body);
 
   if (!validation.success)
-    // 400 -> Bad Request
     return NextResponse.json(validation.error.errors, { status: 400 });
 
-  if (params.id > 15)
-    // 404 -> Not Found
+  const user = await prisma.user.findUnique({
+    where: {
+      id: parseInt(params.id),
+    },
+  });
+
+  if (!user)
     return NextResponse.json(
-      { error: " User does not exist !" },
+      { error: " User Doesn't exist !" },
       { status: 404 }
     );
 
-  return NextResponse.json({ id: params.id, name: body.name });
+  const updateUser = await prisma.user.update({
+    where: {
+      id: parseInt(params.id),
+    },
+    data: {
+      name: body.name,
+      email: body.email,
+    },
+  });
+
+  const newupdateVal = await prisma.user.findUnique({
+    where: {
+      id: parseInt(params.id),
+    },
+  });
+
+  return NextResponse.json(
+    { status: "User Data Updated Successfully", user: newupdateVal },
+    { status: 200 }
+  );
 }
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } }
 ) {
   /*
     step 1 : Fetch the user form DB
@@ -95,14 +127,28 @@ export async function DELETE(
 
   const body = await request.json();
 
-  if (!body.name)
-    return NextResponse.json({ error: "Name is Required!" }, { status: 400 });
+  const validation = schema.safeParse(body);
 
-  if (params.id > 10)
+  if (!validation.success)
+    return NextResponse.json(validation.error.errors, { status: 400 });
+
+  const user = await prisma.user.findUnique({
+    where: {
+      id: parseInt(params.id),
+    },
+  });
+
+  if (!user)
     return NextResponse.json(
-      { error: "User Does Not Exist!" },
+      { error: " User Doesn't exist !" },
       { status: 404 }
     );
 
-  return NextResponse.json("User Deleted Successfully!");
+  await prisma.user.delete({
+    where: {
+      id: parseInt(params.id),
+    },
+  });
+
+  return NextResponse.json({ status: "User Data Deleted Successfully!" });
 }

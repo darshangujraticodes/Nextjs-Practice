@@ -1,7 +1,3 @@
-import { NextRequest, NextResponse } from "next/server";
-import { apiData } from "./apiData";
-import schema from "./schema";
-
 /*
 
 API has 4 Operation
@@ -13,8 +9,16 @@ DELETE -> Deleted existing data
 
 */
 
-export function GET() {
-  return NextResponse.json(apiData);
+import { NextRequest, NextResponse } from "next/server";
+import { apiData } from "./apiData";
+import schema from "./schema";
+import { prisma } from "@/prisma/client";
+import { error } from "console";
+
+export async function GET() {
+  const usersData = await prisma.user.findMany({});
+
+  return NextResponse.json(usersData, { status: 200 });
 }
 
 export async function POST(request: NextRequest) {
@@ -30,7 +34,24 @@ export async function POST(request: NextRequest) {
   const validation = schema.safeParse(body);
 
   if (!validation.success)
-    return NextResponse.json(validation.error.message, { status: 404 });
+    return NextResponse.json(validation.error.errors, { status: 400 });
 
-  return NextResponse.json({ id: 1, name: body.name }, { status: 201 });
+  const user = await prisma.user.findUnique({
+    where: { email: body.email },
+  });
+
+  if (user)
+    return NextResponse.json({ error: "User Already Exist!" }, { status: 400 });
+
+  const newUser = await prisma.user.create({
+    data: {
+      email: body.email,
+      name: body.name,
+    },
+  });
+
+  return NextResponse.json(
+    { status: "New User Created Successfully!", info: newUser },
+    { status: 201 }
+  );
 }
