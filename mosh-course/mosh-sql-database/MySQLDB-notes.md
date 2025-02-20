@@ -43,7 +43,8 @@ It is of 3 Category : <br>
 
 ### Select Query
 
-`Note : semicolon(;) is must to end command and note as syntax format sql keywords in CAPITAL (upper case) and other normal words in small case | example Below`
+> [!NOTE]
+> Semicolon(;) is must to end command and note as syntax format sql keywords in CAPITAL (upper case) and other normal words in small case | example Below
 
 1. Select Database syntax : USE database_name; `USE nextapp;`
 2. Display all tables in Database : `SHOW tables;`
