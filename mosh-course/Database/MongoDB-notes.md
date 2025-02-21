@@ -49,5 +49,5 @@ It combination of 2 word mongo and db, mongo means huge and db means database. D
 
     It will update all Value <br>
 
-    example : `db.students.updateMany({},{ $set: {  idCard : { hasDomicile: false, hasAadharCard : true   } } })`
+    example : `db.students.updateMany({},{ $set: {  idCard : { hasDomicile: false, hasAadharCard : true   } } })` <br>
     example : `db.students.updateMany({},{ $set: {  hobbies: ['Anime', 'reading books','exploring new place']  } })`
