@@ -1,4 +1,4 @@
-# MySQL Database course notes by Code with Mosh
+# MySQL Database Course Notes
 
 ### What is Database ?
 
