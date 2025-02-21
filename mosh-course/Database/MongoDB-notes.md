@@ -37,10 +37,8 @@ It combination of 2 word mongo and db, mongo means huge and db means database. D
     example : `db.students.find()` -> fetch all values in collections <br>
     example : `db.students.findOne({name:"Ram"})` -> fetch single value <br>
     example : `db.students.find().count()` -> display all values count <br>
-    when you want to fetch collection value on the basis of list data <br>
-    example : `db.students.find({hobbies: 'Anime'})` <br>
-    when you want to fetch nested doc collection value <br>
-    example : `db.students.find({ 'idCard.hasDomicile' : false})` <br>
+    example : `db.students.find({hobbies: 'Anime'})` -> fetch all value on the basis of list data<br>
+    example : `db.students.find({ 'idCard.hasDomicile' : false})` -> fetch all nested doc collection value <br>
 
   - Update Collection data <br>
     It will update only Ram Value <br>
