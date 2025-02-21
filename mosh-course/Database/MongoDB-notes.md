@@ -47,7 +47,6 @@ It combination of 2 word mongo and db, mongo means huge and db means database. D
     Here we are creating idCard nested doc inside student main doc with `$set` <br>
     example : `db.students.updateOne({name: "Ram"},{ $set: {  idCard : { hasDomicile: true, hasAadharCard : true   } } })` <br>
 
-    It will update all Value <br>
-
-    example : `db.students.updateMany({},{ $set: {  idCard : { hasDomicile: false, hasAadharCard : true   } } })` <br>
-    example : `db.students.updateMany({},{ $set: {  hobbies: ['Anime', 'reading books','exploring new place']  } })`
+    To update all values in Single Query <br>
+    example : `db.students.updateMany({},{ $set: {  idCard : { hasDomicile: false, hasAadharCard : true   } } })` -> add nested doc inside main doc <br>
+    example : `db.students.updateMany({},{ $set: {  hobbies: ['Anime', 'reading books','exploring new place']  } })` -> adding list inside main doc
