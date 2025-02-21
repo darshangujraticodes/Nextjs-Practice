@@ -44,11 +44,10 @@ It combination of 2 word mongo and db, mongo means huge and db means database. D
     It will update only Ram Value <br>
     It is also called nested document (creating doc inside doc) <br>
     Nested Doc has limit of 100 and Max Memory size to store nested doc is 16mb <br>
-    Here we are creating idCard nested doc inside student main doc with `$set`
+    Here we are creating idCard nested doc inside student main doc with `$set` <br>
     example : `db.students.updateOne({name: "Ram"},{ $set: {  idCard : { hasDomicile: true, hasAadharCard : true   } } })` <br>
 
     It will update all Value <br>
 
     example : `db.students.updateMany({},{ $set: {  idCard : { hasDomicile: false, hasAadharCard : true   } } })`
-
     example : `db.students.updateMany({},{ $set: {  hobbies: ['Anime', 'reading books','exploring new place']  } })`
