@@ -95,15 +95,80 @@ Data Types in MySQL
    - year
    - timestamp
 
+4. Binary Datatype -> all files like photos, video, pdf and text file stored in binery form in pc disk (storage capacity)\_
+
+   - Binary -> help to store encrtion keys (255 bytes)
+   - Var Binary -> help to store encrtion keys (64 kb)
+   - Tiny BLOB -> (255 bytes)
+   - BLOB -> (64 kb)
+   - Medium BLOB -> (16 mb)
+   - Long BLOB -> (4 gb)
+
 ### Database Query
 
-1. Database Operation :
+1.  Database Operation :
 
-   - `create database school_db;` -> it help to create database
-   - `show databases;` -> it help to display all database created in MySQL
-   - `select database();` -> it help to show current database in which we are working
-   - `use school_db;` -> it helps to select database on which we have to start working
-   - `drop database school_db;` -> it help to delete database
+    - `create database school_db;` -> it help to create database
+    - `show databases;` -> it help to display all database created in MySQL
+    - `select database();` -> it help to show current database in which we are working
+    - `use school_db;` -> it helps to select database on which we have to start working
+    - `drop database school_db;` -> it help to delete database
 
-2. Table Operation :
-   - `create `
+2.  Table Operation : <br>
+
+    - Insert Command
+
+      - syntax : `create table table_name (column_name datatype constraints, column_name datatype constraints   ... table_constraints);` <br>
+      - constraint Info :
+
+      1.  unique -> name value should be unique but it can be null.
+      2.  primary key -> unique factor which can help to index database records (index means ordering data in sequential format)
+      3.  not null -> it means value cannot be stored as empty
+      4.  default (value) -> it means data default value will be stored if value is not pass while inserting data.
+      5.  auto_increment -> it fetch the highest value, increment it and store it new unique id record.
+      6.  Expression bracket -> ( condion or calling function() ) -> circular bracket define expression area where data condition is writen eg (salary > 0.0)
+      7.  decimal(10,2) -> it is an data type in which it has 2 parameter (10 -> define number of digits allowed to display ,2 -> define number of digits allowed to display after decimal point)
+
+      ```
+         create table employee{
+            employee_id int primary key auto_increment,
+            first_name varchar(50) not null,
+            last_name varchar(50) not null,
+            hire_date date default (CURRENT_DATE()),
+            email varchar(100) unique,
+            phone_number varchar(100) unique,
+            salary decimal(10,2) check (salary > 0.0),
+            is_active boolean default true,
+            gender enum('male' , 'female' , "other") not null,
+            hobbies set ('Reading', 'Sport', 'Exploring', 'Gaming' ),
+            created_at timestamp default CURRENT_TIMESTAMP,
+            updated_at timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+            foreign key (department_id) references departments(department_id)
+            }
+      ```
+
+    - Alter Command
+
+      - `alter table employee add column skills varchar(100) `
+      - `alter table employee add column emergency_contact varchar(100) not null check (emmergency_contact REGEXP '^[A-Za-z]+ : [0-9+-]+$' )`
+      - `alter table employee modify column phone_number not null check ( phone_number REGEXP '^(\+91[\s-]?|91[\s-]?)?[6-9]\d{9}$' ) `
+      - `alter table employee add check ( email REGEXP '^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' ) `
+      - `alter table employee rename column phone_number to contact `
+      - `alter table employee drop column skills`
+      - `alter table employee add foreign key (department_id) reference departments(department_id)`
+
+    - Insert Command
+
+      - Insert into table using below query
+      - Syntax : `insert into table_name(column1, column2...) values(values1, values2...) `
+      - `insert into table employee(first_name, last_name, email, contact, gender, department_id) values ('Vaibhav', 'shah', 'vaibhav@gmail.com', '+9890559574', 'female', '55')`
+
+    - Drop Command
+
+      - Note if A table foreign key is added in other table then table A cannot be deleted first, first delete all other dependency and then delete that table
+      - query : `drop table employee,department`
+      - query : `drop table if exists ok`
+
+3.  Select Operation :
+    - Select Query is used to display table data
+    - Wsw
