@@ -48,3 +48,62 @@ It is of 3 Category : <br>
 
 1. Select Database syntax : USE database_name; `USE nextapp;`
 2. Display all tables in Database : `SHOW tables;`
+
+### Database Schema and terminilogy
+
+Database schema : It is logical blueprint or structure that define how data is oraganized within database
+
+1. Tables in database
+2. Relationship between those tables
+3. attributes within each table
+4. contraints and rules that govern the data eg. not null, default value ,
+5. data type of each fields
+
+Types of schema
+
+1. Database schema : complete structure of entire database
+2. Table schema : structure of specific table including column, data types, and constraints
+3. Subschema : A portion of db visible to specific user or application
+
+Data Types in MySQL
+
+1. Numeric -> integer, floating points ( decimal value with rounding value) and fxed points(decimal value with precise decimal digits) (decimal)
+
+   - tiny integer
+   - smal integer
+   - medium integer
+   - big integer
+   - floating
+   - double
+   - decimal
+
+2. String ->
+
+   - char
+   - varchar
+   - text
+   - medium text
+   - long text
+   - enum('male','female', 'transgender') -> select single value from multiple defined options
+   - set('monday', 'tuesday', 'wednesday', 'thursday', 'friday') -> select multiple value from multiple defined options
+
+3. Date -> Date and time
+
+   - Date
+   - datetime
+   - time
+   - year
+   - timestamp
+
+### Database Query
+
+1. Database Operation :
+
+   - `create database school_db;` -> it help to create database
+   - `show databases;` -> it help to display all database created in MySQL
+   - `select database();` -> it help to show current database in which we are working
+   - `use school_db;` -> it helps to select database on which we have to start working
+   - `drop database school_db;` -> it help to delete database
+
+2. Table Operation :
+   - `create `
