@@ -1,5 +1,7 @@
 # MySQL Database Course Notes
 
+### Online Compiler of MySQL = https://onecompiler.com/mysql/
+
 ### What is Database ?
 
 1. It is an organized collection of structured information, typically stored electronically in computer system. It allows for data to be easily access, manage, modified, updated and deleted.
@@ -170,6 +172,7 @@ Data Types in MySQL
       - query : `drop table if exists ok`
 
 3.  Select Operation :
+
     - Select Query is used to display table data
     - `select first_name, last_name, salary from employee` -> to display only selected column data
     - `select * from employee` -> to display all columns data
@@ -178,6 +181,35 @@ Data Types in MySQL
     - `select * from employee ORDER BY salary DESC/ASC` -> order by keyword is used to sort table data in this DESC denotes (Descending) and ASC denotes (Ascending)
     - `select * from employee where department = "IT" ORDER BY salary DESC LIMIT 1` -> Limit keyword is used to restrict the table data display it will display required number records only from top.
     - `select distinct department from employee;` -> distinct keyword will fetch the data of different value only, same value data will be ignored and will not be displayed.
-    - `select  concat(first_name,' ',last_name) as 'Full Name' , salary as 'Current Salary' ,salary * 1.1 as 'Salary After Increment' from employee;`
+    - `select  concat(first_name,' ',last_name) as 'Full Name' , salary as 'Current Salary' ,salary * 1.1 as 'Salary After Increment'  from employee;`
       - Note : as keyword to replace sql column name with our suggested Column name
-      - (salary \* 1.1)
+      - (salary \* 1.1) is an expression of new column which store operation data on salary.
+    - Predefine function
+      - concat(first_name, " ", last_name) -> it is used for concatenation
+      - round(salary, 2) -> it is used for concatenation -> it is used to round of decimal value
+      - avg(salary) -> it is used to find average of salary
+    - `select first_name, salary from employee where department  = 'IT' UNION  select first_name, salary from employee where department  = 'HR' `
+    - `select count(*) from employee group by department;`
+    - Select Query can handle more things rather than just column data example are : `select 5 * 2;` , `select NOW();`, `select 5 > 3;` , `select LENGTH('hello');`
+
+    - Select Query WHERE CLAUSE Logical Operator
+
+      - `select * from books where price < 30;`
+      - `select * from books where category = 'technology' and price < 30;`
+      - `select * from books where (category = 'technology' or category = 'mystery') and price < 30;`
+      - `select * from books where category != 'technology';`
+      - `select * from books where not category = 'technology';`
+      - `select * from books where first_name is null;`
+      - `select * from books where first_name is not null;`
+
+    - Select Query WHERE CLAUSE Pattern Matching
+      - `select * from books where title like '%SQL%'` -> it match the pattern in describe in '%pattern%' in respective column and return the match result.
+      - Note (%pattern%) : pattern is found in middle ,(%pattern) : pattern should be found after some text, (pattern%) : pattern should be found before some text.
+      - `select * from books where title like binary '%sql%'` -> It match Pattern in case sensitive format.
+      - `select * from books where title like '_ql'` -> It will match pattern in which one letter is there ahead of ql. number of underscow define number of number of letter gap in wild card pattern match.
+      - `select * from books where price between 20 and 30;` -> in this it will fetch values which satify that range and both end range value is inclusive.
+      - `select * from books where books category in ('Technology', 'Mystery', 'Astronomy')` -> it will fetch the values which match the suggested options.
+      - `select`
+
+4.  Select Operation :
+    - ``
