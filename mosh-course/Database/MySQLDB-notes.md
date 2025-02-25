@@ -171,4 +171,13 @@ Data Types in MySQL
 
 3.  Select Operation :
     - Select Query is used to display table data
-    - Wsw
+    - `select first_name, last_name, salary from employee` -> to display only selected column data
+    - `select * from employee` -> to display all columns data
+    - `select  first_name as 'First Name' from employee ` -> display first name column data and edit sql head to Suggested title 'First Name' for better readability
+    - `select * from employee where department ='IT' ` -> where clause help to filter the data from table and only fetch the details in which department is of IT only
+    - `select * from employee ORDER BY salary DESC/ASC` -> order by keyword is used to sort table data in this DESC denotes (Descending) and ASC denotes (Ascending)
+    - `select * from employee where department = "IT" ORDER BY salary DESC LIMIT 1` -> Limit keyword is used to restrict the table data display it will display required number records only from top.
+    - `select distinct department from employee;` -> distinct keyword will fetch the data of different value only, same value data will be ignored and will not be displayed.
+    - `select  concat(first_name,' ',last_name) as 'Full Name' , salary as 'Current Salary' ,salary * 1.1 as 'Salary After Increment' from employee;`
+      - Note : as keyword to replace sql column name with our suggested Column name
+      - (salary \* 1.1)
