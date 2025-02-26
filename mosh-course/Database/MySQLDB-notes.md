@@ -209,7 +209,9 @@ Data Types in MySQL
       - `select * from books where title like '_ql'` -> It will match pattern in which one letter is there ahead of ql. number of underscow define number of number of letter gap in wild card pattern match.
       - `select * from books where price between 20 and 30;` -> in this it will fetch values which satify that range and both end range value is inclusive.
       - `select * from books where books category in ('Technology', 'Mystery', 'Astronomy')` -> it will fetch the values which match the suggested options.
-      - `select`
-
-4.  Select Operation :
-    - ``
+      - `select * from books where price > ( select avg(price) from book;)` -> sub query inside main query | fetch books whose price > avg(price)
+      - Practice CASE 1 : `select * from books where year(publication_date) = 2023 and price < (select avg(price) from books );` find book publish in 2023 and price < avg price
+      - Practice CASE 2 : `select \* from books where category = 'technology' and title like '%data%' and in_stock > 50;`
+      - Practice CASE 3 : `select * from books where (  category = 'Technology' and price > 30 ) or (   category = 'Mystery' and price < 20 ) ;`
+      - Practice CASE 4 : `select * from books where (author like '%son%' or author like '%th%' ) and ( publication_date > '2023-03-1' );`
+      - Practice CSAE 5 : `select * from books where not category = 'Technology'; ` || `select * from books where category != 'Technology';`
