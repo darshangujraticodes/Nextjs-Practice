@@ -10,6 +10,18 @@ Framework = libs + tools + strict convention
 eg Angular is framework which follows certain strict convention for building web app
 but React Js is Library which is loosely bound.
 
+Nextjs simplifies the process of building production ready web application
+
+Feature of Next Js over react JS
+
+1.  Routing
+2.  API Routing
+3.  Rendering
+4.  Data Fetching
+5.  Styling
+6.  Optimization (inbuild image optimization by converting in webp)
+7.  Dev and prod build system
+
 It comes with followin features
 
 1. It has own set of library like nextjs router for page navigation
@@ -65,6 +77,11 @@ Frontent code get normally executed in browser
      - Resource Efficient
      - SEO
      - More Secure
+
+   - React Server Components : It is a new architecture that was introduced by the react team and quickly adopted by next js. This architecture introducce new approach of creating React components diving them into 2 diff types.
+
+     - Server Components
+     - Client Components
 
      Drawback of using (SSR) we loose user interactivity eg click, change, submit , hover is not avilable in server side
 
