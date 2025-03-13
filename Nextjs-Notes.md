@@ -150,7 +150,7 @@ Style can be applied through 3 types
 3. Segments Routing | Catch All Segements
 
    - When we want to fetch multiple data from url routes it sis applied through segment slug folder
-   - folder name : `[[...slug]]` -> to fetch mulitiple data are props parmeter in page data routing | this params routing called segments data fetching
+   - folder name : `[[...slug]]` -> to fetch mulitiple data are props parmeter in page data routing | this params routing called segments data fetching | it is also called catch all segment
    - Note alway put double square bracket becoz in single bracket null slug value lead to `404 not found product page` | `[[...slug]]`
 
 4. Query String search Params :

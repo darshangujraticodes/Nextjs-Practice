@@ -1,11 +1,13 @@
 import React from "react";
 
-const productsPage = () => {
+const productCollectionPage = () => {
   return (
-    <div className="mt-5">
-      <h1 className=" text-4xl  text-center ">Products Page</h1>
-    </div>
+    <section>
+      <div className="container">
+        <h1 className="text-3xl mt-5 text-center ">Product Collection Page</h1>
+      </div>
+    </section>
   );
 };
 
-export default productsPage;
+export default productCollectionPage;
