@@ -136,6 +136,7 @@ Style can be applied through 3 types
 4. `route.tsx` -> it is used to create api
 5. `not-found.tsx` -> to display custom errors
 6. `error.tsx` -> to display general errors
+7. `_document` -> ( \_ -> underscow ) it is used to create private folder it is used to denote nextjs as internal stuff dont inlude it and all files inside it in routing
 
 ### Routing in NextJs
 
@@ -169,6 +170,10 @@ Style can be applied through 3 types
    - when we to display not found on logical operation basis
 
 7. Custom Error Page (`error.tsx`)
+
+8. Private Folder (`_libInfo`)
+   - It is is used to create private folder which will mark this folder and all files inside it as internal stuff and it will be ignore for routes.
+   - But if you want ( \_ underscore ) in url use URL Encoded Code (%5Flib) and track url
 
 ### Types of File in NextJs
 
