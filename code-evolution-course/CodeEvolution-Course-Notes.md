@@ -1,7 +1,7 @@
 # Code Evolution Next Js Course Note and Chapter
 
 1. chapter 1 : App Routing (Folder Creation)
-2. Chapter 2 : File Types (page.tsx, not-found.tsx, layout.tsx )
+2. Chapter 2 : File Types (page.tsx, not-found.tsx, layout.tsx , templates.tsx)
 3. Chapter 3 : video Timeline (21:50) Dynamic Routes folder (`[producyId]`)
 4. Chapter 4 : video Timeline (27:50) Nested Dynamic Routes folder (`products/[productId]/review/[reviewId]`)
 5. Chapter 5 : video Timeline (31:22) Catch All segments folder (`[[...slug]]`) to capture all nested dynamic elements
@@ -16,7 +16,7 @@
    - eg header and footer is not reuired in auth page but required in other inner pages so two root layout page will be created inside `RouteGroups - ()` folder
 10. Chapter 10 : MetaData
     - Metadata can be declare in both layout or page if it is declare in both then page metadata content will rule out layout content.
-11. Links and Active Links of Route
+11. Chapter 11 : Links and Active Links of Route
     - video Timeline (1:14:52) | For Link Next has inbuild Tags `<Link href="/"> Home <Link>` | `<Link href="/products" replace > Products <Link>` -> replace attribute remove the back history directly it move backw to home page |
     - video Timeline (1:19:49) | To Highlight active links we have to use usePathname() hooks |
     - video Timeline (1:23:59) | params and searchParams is use to filter and sorting data, params and searchParams return value in promise so it is used in async await or it can be handle using use() usehook of react in client side handling "use client"
@@ -24,3 +24,6 @@
     - `router.push("/")` -> navigate user to given url on certain operation
     - `router.replace("/")` -> navigate user to given url on certain operation but click on back will directly navigate to home page clear back history.
     - `redirect("/")` -> it will redirect to specfic url
+12. Chapter 12 : templates.tsx : when every time you want to mount and unmount new component to dom model we use this template in layout it does not unmount directly update data but in template first it unmount old component and add new small component to main dom.
+    - Example when we create any form directly in layout.tsx page input tag value is persisted across different page which means it is not unmounting or resetting the old DOM. to solve this issue template.tsx was introduced it reset by unmounting and new mouting of component lead to reset data.
+    - To test replace (auth) folder template.tsx page to layout.tsx and test input data and again test with template.tsx value will be removed.
