@@ -9,7 +9,7 @@ const Layouts = ({
 }>) => {
   return (
     <section>
-      <div className="container">
+      {/* <div className="container">
         <div className="row">
           <div className="col-4">
             <ProductCard
@@ -21,7 +21,8 @@ const Layouts = ({
             />
           </div>
         </div>
-      </div>
+      </div> */}
+
       <div>{children}</div>
     </section>
   );

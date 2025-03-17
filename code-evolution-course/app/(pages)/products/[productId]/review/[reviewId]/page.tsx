@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
 import React from "react";
+import { redirect, notFound } from "next/navigation";
 
 const reviewDetailPage = async ({
   params,
@@ -10,6 +10,10 @@ const reviewDetailPage = async ({
 
   if (parseInt(reviewId) > 100) {
     notFound();
+  }
+
+  if (parseInt(reviewId) === 95) {
+    redirect("/login");
   }
 
   return (

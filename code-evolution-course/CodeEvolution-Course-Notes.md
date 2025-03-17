@@ -12,3 +12,15 @@
    - It helps to improve the developer experience.
    - eg login and register page inside auth will not require auth in route url login Page : `localhost:3000/login`. It helps in folder organization, code clarity and increased developer clean coding structure.
 9. Chapter 9 : Layout.jsx or layout.tsx :
+   - Layout page can be define inside ()- circular bracket folder as per different layout structure requirement
+   - eg header and footer is not reuired in auth page but required in other inner pages so two root layout page will be created inside `RouteGroups - ()` folder
+10. Chapter 10 : MetaData
+    - Metadata can be declare in both layout or page if it is declare in both then page metadata content will rule out layout content.
+11. Links and Active Links of Route
+    - video Timeline (1:14:52) | For Link Next has inbuild Tags `<Link href="/"> Home <Link>` | `<Link href="/products" replace > Products <Link>` -> replace attribute remove the back history directly it move backw to home page |
+    - video Timeline (1:19:49) | To Highlight active links we have to use usePathname() hooks |
+    - video Timeline (1:23:59) | params and searchParams is use to filter and sorting data, params and searchParams return value in promise so it is used in async await or it can be handle using use() usehook of react in client side handling "use client"
+    - Video Timeline (1:29:53) | Navigating Programatically useRouter() hook | useRouter() require client side rendeeing.
+    - `router.push("/")` -> navigate user to given url on certain operation
+    - `router.replace("/")` -> navigate user to given url on certain operation but click on back will directly navigate to home page clear back history.
+    - `redirect("/")` -> it will redirect to specfic url
