@@ -1,8 +1,15 @@
 import ProductCard from "@/app/components/ProductCard";
 import React from "react";
 import { assetsImg } from "@/public/assets/assets";
+import Link from "next/link";
 
-const blogCollectionPage = () => {
+const blogCollectionPage = async () => {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Intentional Delay");
+    }, 2000);
+  });
+
   return (
     <section>
       <div className="container">
@@ -50,6 +57,10 @@ const blogCollectionPage = () => {
                 cardPara=""
               />
             </div>
+          </div>
+
+          <div>
+            <Link href="/dashboard"> Admin Dashboard </Link>
           </div>
         </div>
       </div>

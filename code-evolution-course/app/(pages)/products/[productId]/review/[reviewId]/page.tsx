@@ -1,11 +1,24 @@
 import React from "react";
 import { redirect, notFound } from "next/navigation";
+import { log } from "console";
+
+function randomIntFromInterval(min: number, max: number): number {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 const reviewDetailPage = async ({
   params,
 }: {
   params: Promise<{ productId: string; reviewId: string }>;
 }) => {
+  const num = randomIntFromInterval(1, 3);
+
+  console.log("random value = ", num);
+  if (num === 1) {
+    throw new Error("Error Loading Review");
+  }
+
   const { productId, reviewId } = await params;
 
   if (parseInt(reviewId) > 100) {

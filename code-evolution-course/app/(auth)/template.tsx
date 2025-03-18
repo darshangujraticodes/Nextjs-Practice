@@ -28,8 +28,8 @@ const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
               type="text"
               onChange={(e) => setInputData(e.target.value)}
               value={inputData}
-              className="border rounded-md mt-5 px-3 py-2"
-              placeholder="Enter Any Value"
+              className="border rounded-md mt-5 px-3 py-2 w-[370px]  "
+              placeholder="template.tsx input tag Enter Value "
             />
           </form>
         </div>
