@@ -203,6 +203,7 @@ Data Types in MySQL
       - `select * from books where first_name is not null;`
 
     - Select Query WHERE CLAUSE Pattern Matching
+
       - `select * from books where title like '%SQL%'` -> it match the pattern in describe in '%pattern%' in respective column and return the match result.
       - Note (%pattern%) : pattern is found in middle ,(%pattern) : pattern should be found after some text, (pattern%) : pattern should be found before some text.
       - `select * from books where title like binary '%sql%'` -> It match Pattern in case sensitive format.
@@ -211,7 +212,12 @@ Data Types in MySQL
       - `select * from books where books category in ('Technology', 'Mystery', 'Astronomy')` -> it will fetch the values which match the suggested options.
       - `select * from books where price > ( select avg(price) from book;)` -> sub query inside main query | fetch books whose price > avg(price)
       - Practice CASE 1 : `select * from books where year(publication_date) = 2023 and price < (select avg(price) from books );` find book publish in 2023 and price < avg price
-      - Practice CASE 2 : `select \* from books where category = 'technology' and title like '%data%' and in_stock > 50;`
+      - Practice CASE 2 : `select * from books where category = 'technology' and title like '%data%' and in_stock > 50;`
       - Practice CASE 3 : `select * from books where (  category = 'Technology' and price > 30 ) or (   category = 'Mystery' and price < 20 ) ;`
       - Practice CASE 4 : `select * from books where (author like '%son%' or author like '%th%' ) and ( publication_date > '2023-03-1' );`
       - Practice CSAE 5 : `select * from books where not category = 'Technology'; ` || `select * from books where category != 'Technology';`
+
+    - Select Query to order sql table data
+      - `select * from employees order by age [ASC/DESC]; ` -> Arrange data in ascending order (ASC - Ascending (default) | DESC - Descending order)
+      - `select * from employees where department = "IT" order by name;`
+      - `select * from employees order by binary name; ` -> case sensitive sorting
