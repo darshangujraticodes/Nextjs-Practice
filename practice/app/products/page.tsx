@@ -54,7 +54,7 @@ const ProductDisplayPage = () => {
         <div className="mt-3">
           <p className="text-center">
             Links :
-            <Link href="/docs/feature1/concept1/example">Doc Example</Link>
+            <Link href="/docs/feature1/concept1/example1">Doc Example</Link>
           </p>
         </div>
       </div>

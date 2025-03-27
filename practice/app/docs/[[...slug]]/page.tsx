@@ -7,7 +7,7 @@ const page = async ({ params }: SlugParamsType) => {
 
   console.log(slug);
 
-  let newData = slug.join(" ").split(" ").join(" ");
+  let newData = slug.join(" ");
 
   return (
     <section>
