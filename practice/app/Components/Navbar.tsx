@@ -27,6 +27,9 @@ const Navbar = () => {
             <Link href="/blog" className="py-2 px-3">
               Blog
             </Link>
+            <Link href="/login" className="py-2 px-3">
+              login
+            </Link>
           </div>
         </div>
       </div>

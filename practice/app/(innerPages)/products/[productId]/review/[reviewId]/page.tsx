@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import React from "react";
 
 type ReviewParamsType = {
@@ -6,6 +7,10 @@ type ReviewParamsType = {
 
 const ReviewDetailsPage = async ({ params }: ReviewParamsType) => {
   const { productId, reviewId } = await params;
+
+  if (parseInt(String(reviewId)) > 100) {
+    notFound();
+  }
 
   return (
     <section>

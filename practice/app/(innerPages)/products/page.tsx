@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const ProductDisplayPage = () => {
@@ -43,6 +44,9 @@ const ProductDisplayPage = () => {
             </Link>
             <Link href="/products/pc-software/review/3" className="mx-3">
               PC Software Review
+            </Link>
+            <Link href="/products/mac-software/review/455" className="mx-3">
+              Mac Software Throw Notfound
             </Link>
           </div>
         </div>
