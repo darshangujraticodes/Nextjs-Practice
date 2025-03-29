@@ -2,6 +2,12 @@ import { Linden_Hill } from "next/font/google";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: " Login Page | Next JS Static Metadata Export ",
+  description:
+    "  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. A animi voluptatibus quaerat culpa ab quasi. ",
+};
+
 const page = () => {
   return (
     <div className="  container  ">

@@ -36,8 +36,8 @@ const ProductDisplayPage = () => {
         <div className="flex   justify-center ">
           <div className="mt-4">
             Links :
-            <Link href="/products/website/review/1" className="mx-3">
-              Website Review
+            <Link href="/products/website/review/1" replace className="mx-3">
+              Website Review (Replace Attribut Link)
             </Link>
             <Link href="/products/app/review/2" className="mx-3">
               Android Review

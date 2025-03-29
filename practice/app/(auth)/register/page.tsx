@@ -1,6 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: " Register Page | Next JS Static Metadata Export ",
+  description:
+    "  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. A animi voluptatibus quaerat culpa ab quasi. ",
+};
+
 const page = () => {
   return (
     <div className="  container  ">

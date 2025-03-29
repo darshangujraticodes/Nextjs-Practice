@@ -1,0 +1,7 @@
+<svg width="80" height="72" viewBox="0 0 80 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#bgblur_0_1239_2083_clip_path)" data-figma-skip-parse="true"><foreignObject x="-27.9917" y="-31.2666" width="134.961" height="134.961"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(16.06px);height:100%;width:100%"></div></foreignObject></g><ellipse data-figma-bg-blur-radius="32.1152" cx="39.4887" cy="36.2141" rx="35.3648" ry="35.3648" transform="rotate(-139.221 39.4887 36.2141)" fill="black" fill-opacity="0.3"/>
+<path d="M33.3882 28.4155V42.584L46.6121 35.4998L33.3882 28.4155Z" fill="white"/>
+<defs>
+<clipPath id="bgblur_0_1239_2083_clip_path"><ellipse cx="39.4887" cy="36.2141" rx="35.3648" ry="35.3648" transform="rotate(-139.221 39.4887 36.2141)"/>
+</clipPath></defs>
+</svg>
