@@ -16,11 +16,11 @@ const Navbar = () => {
       name: "About",
       href: "/about",
     },
-    {
-      id: 3,
-      name: "Contact",
-      href: "/contact",
-    },
+    // {
+    //   id: 3,
+    //   name: "Contact",
+    //   href: "/contact",
+    // },
     {
       id: 4,
       name: "Products",
@@ -60,7 +60,7 @@ const Navbar = () => {
                   key={item.id}
                   href={item.href}
                   className={`  ${
-                    isActive ? " bg-indigo-500 " : ""
+                    isActive ? " bg-indigo-500 text-white " : ""
                   }  py-2 px-3  rounded-xl font-semibold `}
                 >
                   {item.name}

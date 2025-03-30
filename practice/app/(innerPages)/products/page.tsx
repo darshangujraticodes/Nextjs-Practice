@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
+import ClickNavigation from "./ClickNavigation";
 
 const ProductDisplayPage = () => {
   return (
@@ -61,6 +62,8 @@ const ProductDisplayPage = () => {
             <Link href="/docs/feature1/concept1/example1">Doc Example</Link>
           </p>
         </div>
+
+        <ClickNavigation />
       </div>
     </section>
   );
