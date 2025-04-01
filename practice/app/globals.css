@@ -61,6 +61,17 @@ body {
   padding: 0 10px;
 }
 
+.dashboardCard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #262626;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+}
+
 @media (max-width: 1200px) {
   .container {
     max-width: 1140px;

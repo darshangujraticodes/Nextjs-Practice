@@ -10,17 +10,20 @@ const FooterSection = () => {
             <div className="">
               <p className="mb-2">
                 <Link href="/" className="mb-3">
-                  {" "}
-                  Home{" "}
-                </Link>{" "}
+                  Home
+                </Link>
               </p>
 
               <p className="mb-2">
                 <Link href="/about"> About </Link>
               </p>
 
-              <p>
+              <p className="mb-2">
                 <Link href="/contact"> Contact </Link>
+              </p>
+
+              <p>
+                <Link href="/admin-dashboard"> Admin Dashboard </Link>
               </p>
             </div>
           </div>
