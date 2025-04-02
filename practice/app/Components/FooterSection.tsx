@@ -27,6 +27,21 @@ const FooterSection = () => {
               </p>
             </div>
           </div>
+          <div className="col-4">
+            <div className="">
+              <p className="mb-2">
+                <Link href="/api-handling" className="mb-3">
+                  Api Handling
+                </Link>
+              </p>
+
+              <p className="mb-2">
+                <Link href="/f1" className="mb-3">
+                  Intercepting Routes
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
