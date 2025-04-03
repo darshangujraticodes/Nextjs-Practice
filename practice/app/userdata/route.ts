@@ -1,4 +1,3 @@
-import { log } from "console";
 import { data } from "./data";
 
 type UserType = {

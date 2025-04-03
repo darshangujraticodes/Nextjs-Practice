@@ -40,6 +40,12 @@ const FooterSection = () => {
                   Intercepting Routes
                 </Link>
               </p>
+
+              <p className="mb-2">
+                <Link href="/userdata" className="mb-3">
+                  User Data
+                </Link>
+              </p>
             </div>
           </div>
         </div>
