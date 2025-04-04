@@ -46,6 +46,11 @@ const FooterSection = () => {
                   User Data
                 </Link>
               </p>
+              <p className="mb-2">
+                <Link href="/api-handling" className="mb-3">
+                  API Handling
+                </Link>
+              </p>
             </div>
           </div>
         </div>

@@ -1,11 +1,9 @@
 import ErrorButton from "../Components/ErrorButton";
 import Image from "next/image";
-// import img1 from "@/public/assets/1.png";
-
 import { assetsImg } from "@/public/assets/assets";
 
 export default function Home() {
-  const { img1, img2, img3, img4 } = assetsImg;
+  const { img1, img2, img3 } = assetsImg;
 
   return (
     <section className="mt-8">

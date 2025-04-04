@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 export function middleware(request: NextRequest) {
   if (!isLoggedIn && request.nextUrl.pathname.startsWith("/")) {
