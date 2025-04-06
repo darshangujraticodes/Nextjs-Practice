@@ -15,13 +15,7 @@ const ServerApiCall = async () => {
 
   //   console.log("Fetch API Posts Data = ", posts);
 
-  return (
-    <>
-      {posts?.map((item) => (
-        <p key={item.id}>{` ${item.id} - ${item.name} `}</p>
-      ))}
-    </>
-  );
+  return;
 };
 
 export default ServerApiCall;

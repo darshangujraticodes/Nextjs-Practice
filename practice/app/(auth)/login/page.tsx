@@ -1,12 +1,10 @@
+"use client";
+
+import { log } from "console";
 import { Linden_Hill } from "next/font/google";
 import Link from "next/link";
+import Script from "next/script";
 import React from "react";
-
-export const metadata = {
-  title: " Login Page | Next JS Static Metadata Export ",
-  description:
-    "  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. A animi voluptatibus quaerat culpa ab quasi. ",
-};
 
 const page = () => {
   return (
@@ -22,6 +20,22 @@ const page = () => {
       <p className="text-center  mt-8">
         <Link href="/register"> Sign Up </Link> <br />
       </p>
+
+      <p className="text-center  mt-8">
+        Script Component : To Execute Script but for this specific Page only not
+        for all so it is implemented through Script Component
+      </p>
+
+      <div>
+        {/* Note script component does not work for Typescript it will treat as meme file and wheere the script component is used should in in client side rendering */}
+        <Script
+          src="/FeatureScript.js"
+          onLoad={() => {
+            console.log("Script Component Executed!");
+          }}
+          async
+        />
+      </div>
     </div>
   );
 };

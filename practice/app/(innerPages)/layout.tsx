@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Playfair_Display, Share_Tech, Inter } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "../Components/Navbar";
 import FooterSection from "../Components/FooterSection";
@@ -9,8 +9,22 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playFairFonts = Playfair_Display({
+  variable: "--font-playfair-display",
+  weight: "500",
+  display: "swap",
+  subsets: ["latin"],
+});
+
+const shareTechFont = Share_Tech({
+  weight: "400",
+  display: "swap",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  weight: "400",
+  display: "swap",
   subsets: ["latin"],
 });
 
@@ -26,7 +40,7 @@ export default function InnerPagesLayout({
 }>) {
   return (
     <html>
-      <body>
+      <body className={inter.className}>
         <Navbar />
 
         {children}
